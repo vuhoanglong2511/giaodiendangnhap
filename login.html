@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Đảm bảo mã hóa ký tự là UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Đảm bảo trang web phản hồi tốt trên các thiết bị di động -->
+    <title>HRM IPOS - Login</title> <!-- Tiêu đề trang sẽ hiển thị trên tab của trình duyệt -->
+    <style>
+        /* Styling cho toàn bộ trang */
+        body {
+            margin: 0; /* Loại bỏ khoảng cách mặc định của trình duyệt */
+            font-family: Arial, sans-serif; /* Đặt font chữ cho toàn trang */
+            background: linear-gradient(135deg, #FFD700, #FFA500); /* Tạo nền với gradient màu vàng và cam */
+            height: 100vh; /* Đảm bảo chiều cao của trang chiếm toàn bộ màn hình */
+            display: flex; /* Sử dụng flexbox để căn giữa nội dung */
+            justify-content: center; /* Căn giữa theo chiều ngang */
+            align-items: center; /* Căn giữa theo chiều dọc */
+        }
+
+        /* Styling cho phần container chứa form */
+        .container {
+            background: #fff; /* Màu nền trắng cho container */
+            border-radius: 10px; /* Bo tròn các góc của container */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tạo hiệu ứng đổ bóng nhẹ cho container */
+            padding: 30px; /* Khoảng cách trong container */
+            width: 350px; /* Chiều rộng của container */
+            text-align: center; /* Căn giữa các nội dung trong container */
+        }
+
+        /* Tiêu đề trong container */
+        .container h1 {
+            font-size: 24px; /* Kích thước font của tiêu đề */
+            margin-bottom: 10px; /* Khoảng cách dưới tiêu đề */
+            color: #000; /* Màu chữ của tiêu đề */
+        }
+
+        /* Thông tin phụ trong container */
+        .container p {
+            font-size: 14px; /* Kích thước chữ cho đoạn văn */
+            color: #666; /* Màu chữ xám nhạt cho đoạn văn */
+            margin-bottom: 20px; /* Khoảng cách dưới đoạn văn */
+        }
+
+        /* Styling cho các trường input */
+        .form-group {
+            margin-bottom: 15px; /* Khoảng cách giữa các trường input */
+            text-align: left; /* Căn trái cho nhãn và ô nhập liệu */
+        }
+
+        .form-group label {
+            display: block; /* Đảm bảo nhãn (label) chiếm toàn bộ chiều rộng */
+            font-size: 14px; /* Kích thước chữ của nhãn */
+            margin-bottom: 5px; /* Khoảng cách dưới nhãn */
+            color: #333; /* Màu chữ cho nhãn */
+        }
+
+        .form-group input {
+            width: 100%; /* Chiều rộng của ô nhập liệu là 100% */
+            padding: 10px; /* Khoảng cách trong ô nhập liệu */
+            border: 1px solid #ccc; /* Viền xung quanh ô nhập liệu */
+            border-radius: 5px; /* Bo tròn các góc của ô nhập liệu */
+            font-size: 14px; /* Kích thước chữ trong ô nhập liệu */
+        }
+
+        /* Styling cho nút Login */
+        .btn {
+            background: #FFA500; /* Màu nền cam cho nút */
+            color: #fff; /* Màu chữ trắng cho nút */
+            border: none; /* Loại bỏ viền mặc định của nút */
+            padding: 10px 15px; /* Khoảng cách trong nút */
+            border-radius: 5px; /* Bo tròn các góc của nút */
+            cursor: pointer; /* Hiển thị con trỏ chuột dạng bàn tay khi hover vào nút */
+            font-size: 16px; /* Kích thước chữ trong nút */
+            width: 100%; /* Chiều rộng của nút chiếm 100% chiều rộng của container */
+        }
+
+        .btn:hover {
+            background: #FF8C00; /* Đổi màu nền khi hover vào nút */
+        }
+
+        /* Liên kết chuyển hướng đến trang đăng ký */
+        .link {
+            margin-top: 15px; /* Khoảng cách trên liên kết */
+            font-size: 14px; /* Kích thước chữ của liên kết */
+            color: #007BFF; /* Màu chữ xanh cho liên kết */
+            text-decoration: none; /* Xóa gạch chân của liên kết */
+            cursor: pointer; /* Hiển thị con trỏ chuột dạng bàn tay khi hover vào liên kết */
+        }
+
+        .link:hover {
+            text-decoration: underline; /* Thêm gạch chân khi hover vào liên kết */
+        }
+    </style>
+    <script defer src="script.js"></script> <!-- Đưa script.js vào sau khi HTML được tải xong -->
+</head>
+<body>
+    <div class="container">
+        <!-- Tiêu đề trang -->
+        <h1>HRM IPOS</h1>
+        <p>LOGIN</p> <!-- Tiêu đề đăng nhập -->
+        <p>Enter your email and password to sign in</p> <!-- Hướng dẫn người dùng nhập thông tin -->
+        
+        <!-- Form đăng nhập -->
+        <form id="loginForm">
+            <!-- Trường nhập email -->
+            <div class="form-group">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" placeholder="Enter your email">
+            </div>
+
+            <!-- Trường nhập mật khẩu -->
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" placeholder="Enter your password">
+            </div>
+
+            <!-- Nút submit form -->
+            <button type="submit" class="btn">Login</button>
+        </form>
+        
+        <!-- Liên kết chuyển đến trang đăng ký nếu chưa có tài khoản -->
+        <a href="./index.html" class="link" id="signupRedirect">Don't have an account? Sign up</a>
+    </div>
+</body>
+</html>
